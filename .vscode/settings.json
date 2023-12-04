@@ -1,0 +1,20 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/.node_modules": true,
+        "**/.azuredevops": true,
+        "**/.idea": true,
+        "**/.vs": true,
+        "**/.vscode": true,
+        "**/config": true,
+        "**/coverage": true,
+        "**/dist": false,
+        "**/pipeline": true,
+        "**/node_modules": true
+    }
+}
