@@ -17,5 +17,5 @@ const data = lines.map((line) => {
 const solution = data.reduce((acc, current) => acc + parseInt(current), 0);
 
 export default () => {
-  return console.log(parseInt("seventeen"));
+  return console.log(solution);
 };
