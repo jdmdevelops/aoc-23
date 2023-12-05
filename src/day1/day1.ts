@@ -16,15 +16,15 @@ const arr = [
 const regEx = new RegExp(arr.join("|"), "g");
 
 const legend: Record<string, string> = {
-  one: "1",
-  two: "2",
-  three: "3",
-  four: "4",
-  five: "5",
-  six: "6",
-  seven: "7",
-  eight: "8",
-  nine: "9",
+  one: "on1e",
+  two: "tw2o",
+  three: "thr3ee",
+  four: "fou4r",
+  five: "fi5ve",
+  six: "s6ix",
+  seven: "se7vem",
+  eight: "e8ight",
+  nine: "ni9ne",
 };
 
 //split by new line
@@ -32,15 +32,13 @@ const lines = input.split(/\r?\n/);
 
 //determine which characters are numbers
 const data = lines.map((line) => {
-  // console.log(line);
   const replacedNums = line.replace(regEx, (match) => legend[match]);
-  // console.log(replacedNums);
+  const replacedNumsDup = replacedNums.replace(regEx, (match) => legend[match]);
 
-  const firstNum = replacedNums.split("").find((char) => !isNaN(+char)) ?? "";
-  // console.log(firstNum);
+  const firstNum =
+    replacedNumsDup.split("").find((char) => !isNaN(+char)) ?? "";
   const lastNum =
-    replacedNums.split("").findLast((char) => !isNaN(+char)) ?? "";
-  // console.log(lastNum);
+    replacedNumsDup.split("").findLast((char) => !isNaN(+char)) ?? "";
 
   return firstNum + lastNum;
 });
