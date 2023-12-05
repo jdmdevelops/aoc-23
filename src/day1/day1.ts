@@ -32,13 +32,11 @@ const lines = input.split(/\r?\n/);
 
 //determine which characters are numbers
 const data = lines.map((line) => {
-  const replacedNums = line.replace(regEx, (match) => legend[match]);
-  const replacedNumsDup = replacedNums.replace(regEx, (match) => legend[match]);
+  const replacedNums = line.replaceAll(regEx, (match) => legend[match]);
 
-  const firstNum =
-    replacedNumsDup.split("").find((char) => !isNaN(+char)) ?? "";
+  const firstNum = replacedNums.split("").find((char) => !isNaN(+char)) ?? "";
   const lastNum =
-    replacedNumsDup.split("").findLast((char) => !isNaN(+char)) ?? "";
+    replacedNums.split("").findLast((char) => !isNaN(+char)) ?? "";
 
   return firstNum + lastNum;
 });
